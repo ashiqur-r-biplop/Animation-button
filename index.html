@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+
+    .glitch-button {
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 1.5rem;
+        line-height: 1;
+        padding: 15px 25px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
+        max-width: 742px;
+        cursor: pointer;
+        background-color: #e73a04;
+        text-decoration: none;
+        border-radius: 10px;
+        color: aliceblue;
+    }
+
+    .glitch-button::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -120px;
+        height: 100%;
+        width: 90px;
+        background: hsla(0, 0%, 100%, .4);
+        -webkit-transition: all .15s linear;
+        transition: all .15s linear;
+        -webkit-transform: skewX(-20deg) translateX(0);
+        transform: skewX(-20deg) translateX(0);
+        -webkit-animation: buttonShine 4s infinite;
+        animation: buttonShine 4s infinite;
+    }
+
+    @keyframes buttonShine {
+        0% {
+            -webkit-transform: skewX(-20deg) translateX(0);
+            transform: skewX(-20deg) translateX(0);
+        }
+
+        90% {
+            -webkit-transform: skewX(-20deg) translateX(0);
+            transform: skewX(-20deg) translateX(0);
+        }
+
+        95% {
+            -webkit-transform: skewX(-20deg) translateX(900px);
+            transform: skewX(-20deg) translateX(900px);
+        }
+    }
+</style>
+
 <body>
-    
+    <div>
+        <a href="#" class="glitch-button">Yes! I Want This Insane Deal For $197</a>
+    </div>
 </body>
+
 </html>
